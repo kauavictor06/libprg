@@ -14,6 +14,10 @@ int tamanho_pilha(pilha_t* p);
 void imprimir_pilha(pilha_t* p);
 void destruir_pilha(pilha_t* p);
 
+typedef struct fila fila_t;
+fila_t criar_fila(int capacidade);
+void enfileirar(fila_t* fila, int valor);
+
 #endif
 
 
