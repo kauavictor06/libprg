@@ -18,8 +18,18 @@ typedef struct fila fila_t;
 fila_t criar_fila(int capacidade);
 void enfileirar(fila_t* fila, int valor);
 
-typedef struct lista_linear_t;
+typedef struct lista_linear {
+    int* elementos;
+    int tamanho;
+    int capacidade;
+} lista_linear_t;
 lista_linear_t* criar(int capacidade);
+void inserir(lista_linear_t* lista, int valor);
+int buscar(lista_linear_t* lista, int valor);
+void remover(lista_linear_t* lista, int valor);
+int vazia(lista_linear_t* lista);
+int cheia(lista_linear_t* lista);
+void destruir(lista_linear_t* lista);
 
 #endif
 
