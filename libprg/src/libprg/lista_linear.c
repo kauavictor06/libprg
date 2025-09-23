@@ -57,3 +57,4 @@ void destruir(lista_linear_t* lista) {
     free(lista->elementos);
     free(lista);
 }
+//teste
