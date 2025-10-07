@@ -29,12 +29,12 @@ int empilhar(pilha_t* p, int valor) {
     return 1;
 }
 
-int desempilhar(pilha_t* p, int* valor) {
+int desempilhar(pilha_t* p) {
     if (p->topo < 0)
         return 0; // pilha vazia
-
-    *valor = p->elementos[(p->topo)--];
-    return 1;
+    int elemento_removido = p->elementos[p->topo];
+    p->topo = p->topo - 1;
+    return elemento_removido;
 }
 
 int topo_pilha(pilha_t* p, int* valor) {
