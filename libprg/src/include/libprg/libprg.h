@@ -34,10 +34,14 @@ bool lista_cheia (lista_linear_t* lista);
 void inserir(lista_linear_t* lista, int valor);
 int buscar(lista_linear_t* lista, int valor);
 bool lista_vazia(lista_linear_t* lista);
-void remover(lista_linear_t* lista);
+void remover_linear(lista_linear_t* lista, int valor);
+void remover_da_posicao(lista_linear_t* lista, int posicao);
 void destruir_lista(lista_linear_t* lista);
 void exibir_lista(lista_linear_t* lista);
 int primeiro(lista_linear_t* lista);
+int busca_na_posicao(lista_linear_t* lista, int posicao);
+void inserir_nao_ordenada(lista_linear_t *lista, int valor);
+void inserir_ordenada(lista_linear_t *lista, int valor);
 
 
 typedef struct no no_t;

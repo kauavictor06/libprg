@@ -26,7 +26,26 @@ lista_linear_t* criar_lista_linear(int capacidade, bool ordenada) {
 
 
 void inserir(lista_linear_t* lista, int valor) {
+    if (lista_cheia(lista)) {
+        lista->elementos = realloc(lista->elementos, sizeof(int) * lista->capacidade *2);
+    }
+    if (lista->ordenada) inserir_ordenada(lista, valor);
+    else inserir_nao_ordenada(lista, valor);
+}
+
+void inserir_nao_ordenada(lista_linear_t *lista, int valor) {
     lista->elementos[lista->tamanho] = valor;
+    lista->tamanho++;
+}
+
+void inserir_ordenada(lista_linear_t *lista, int valor) {
+    for (int i = lista->tamanho - 1; i > 0; --i) {
+        if (lista->elementos[i] < valor) {
+            lista->elementos[i+ 1] = valor;
+            break;
+        }
+        lista->elementos[i] = lista->elementos[i - 1];
+    }
     lista->tamanho++;
 }
 
@@ -50,17 +69,26 @@ int buscar(lista_linear_t* lista, int valor) {
 }
 
 // Função para remover um valor da lista (do início, típico de uma fila)
-void remover(lista_linear_t* lista) {
-    if (lista_vazia(lista)) {
-        exit(EXIT_FAILURE);
-        return;
+void remover_linear(lista_linear_t* lista, int valor) {
+    int indice = buscar(lista, valor);
+    if (indice > -1) {
+        lista->elementos[indice] = lista->elementos[lista->tamanho - 1];
+        lista->tamanho--;
     }
-    // // Desloca os elementos pra esquerda
-    // for (int i = 0; i < lista->tamanho - 1; ++i) {
-    //     lista->elementos[i] = lista->elementos[i + 1];
-    // }
-    lista->tamanho--;  // Diminui o tamanho da lista
 }
+
+int limitar_posicao(lista_linear_t *lista, int posicao) {
+    if (posicao > lista->tamanho) return lista->tamanho;
+    if (posicao < 0) return 0;
+}
+
+    void remover_da_posicao(lista_linear_t* lista, int posicao){
+    int indice = limitar_posicao(lista, posicao);
+
+        int valor = lista->elementos[indice];
+        remover_linear(lista, valor);
+    }
+
 
 
 void destruir_lista(lista_linear_t* lista) {
@@ -83,4 +111,15 @@ int primeiro(lista_linear_t* lista) {
         return -1;
     }
     return lista->elementos[0];
+}
+
+int busca_na_posicao(lista_linear_t* lista, int posicao) {
+    return lista->elementos[posicao];
+}
+
+int inserir_na_posicao(lista_linear_t* lista,int valor, int posicao) {
+    int indice = busca_na_posicao(lista, posicao);
+
+    inserir(lista, lista->elementos[indice]);
+    lista->elementos[indice] = valor;
 }
