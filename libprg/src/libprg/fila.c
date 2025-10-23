@@ -44,6 +44,7 @@ bool fila_cheia(fila_t* fila) {
 bool vazia(fila_t* fila) {
     return fila->tamanho == 0;
 }
+
 int tamanho_fila(fila_t* fila) {
     if (fila == NULL)
         return 0;
