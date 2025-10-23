@@ -41,7 +41,7 @@ bool fila_cheia(fila_t* fila) {
 }
 
 
-bool vazia(fila_t* fila) {
+bool fila_vazia(fila_t* fila) {
     return fila->tamanho == 0;
 }
 
@@ -63,7 +63,7 @@ void enfileirar(fila_t* fila, int valor) {
 }
 
 int desenfileirar(fila_t* fila) {
-    if (vazia(fila)) {
+    if (fila_vazia(fila)) {
         printf("Fila vazia! Não é possível desinfileirar.\n");
         exit(EXIT_FAILURE);
     }

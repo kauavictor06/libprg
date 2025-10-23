@@ -23,7 +23,7 @@ fila_t* criar_fila(int capacidade);
 void enfileirar(fila_t* fila, int valor);
 bool fila_cheia(fila_t* fila);
 int desenfileirar(fila_t* fila);
-bool vazia(fila_t* fila);
+bool fila_vazia(fila_t* fila);
 void destruir_fila(fila_t* fila);
 void exibir(fila_t* fila);
 int tamanho_fila(fila_t* fila);
