@@ -14,6 +14,8 @@ int topo_pilha(pilha_t* p, int* valor);
 int tamanho_pilha(pilha_t* p);
 void imprimir_pilha(pilha_t* p);
 void destruir_pilha(pilha_t* p);
+int pilha_vazia(pilha_t* p);
+int pilha_cheia(pilha_t* p);
 
 // /---fila---/
 typedef struct fila fila_t;
@@ -42,6 +44,7 @@ int primeiro(lista_linear_t* lista);
 int busca_na_posicao(lista_linear_t* lista, int posicao);
 void inserir_nao_ordenada(lista_linear_t *lista, int valor);
 void inserir_ordenada(lista_linear_t *lista, int valor);
+int inserir_na_posicao(lista_linear_t* lista,int valor, int posicao);
 
 
 typedef struct no no_t;

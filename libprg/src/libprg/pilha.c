@@ -61,6 +61,17 @@ void imprimir_pilha(pilha_t* p) {
     }
     printf("\n");
 }
+int pilha_vazia(pilha_t* p) {
+    if (p == NULL)
+        return 1;
+    return (p->topo < 0);
+}
+
+int pilha_cheia(pilha_t* p) {
+    if (p == NULL)
+        return 0;
+    return (p->topo >= p->capacidade - 1);
+}
 
 void destruir_pilha(pilha_t* p) {
     if (p) {
