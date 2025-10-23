@@ -26,6 +26,7 @@ int desinfileirar(fila_t* fila);
 bool vazia(fila_t* fila);
 void destruir_fila(fila_t* fila);
 void exibir(fila_t* fila);
+int tamanho_fila(fila_t* fila);
 
 
 
