@@ -61,3 +61,6 @@ no_duplo_t* criar_lista_encadeada_dupla(int valor);
 void adicionar_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 no_duplo_t* buscar_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 void remover_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
+
+
+void bubble_sort(int vetor[], int tamanho);
