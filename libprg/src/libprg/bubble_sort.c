@@ -1,6 +1,7 @@
 //
 // Created by aluno on 06/11/2025.
 //
+#include "libprg/libprg.h"
 
 void bubble_sort(int vetor[], int tamanho) {
     int aux, troca;
@@ -17,4 +18,12 @@ void bubble_sort(int vetor[], int tamanho) {
         }
         if (!troca)break;
     }
+}
+
+void insertion_sort(int vetor[], int tamanho) {
+
+}
+
+void selection_sort(int vetor[], int tamanho) {
+
 }
