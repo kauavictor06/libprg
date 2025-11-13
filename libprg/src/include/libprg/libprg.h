@@ -64,3 +64,5 @@ void remover_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 
 
 void bubble_sort(int vetor[], int tamanho);
+void insertion_sort(int vetor[], int tamanho);
+void selection_sort(int vetor[], int tamanho);
