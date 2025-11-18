@@ -66,3 +66,11 @@ void remover_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 void bubble_sort(int vetor[], int tamanho);
 void insertion_sort(int vetor[], int tamanho);
 void selection_sort(int vetor[], int tamanho);
+
+
+typedef struct no_arvore no_arvore_t;
+no_arvore_t *criar_no_arvore(int valor);
+void destruir_no_arvore(no_arvore_t *no_arvore);
+no_arvore_t *inserir_valor(no_arvore_t *raiz, int valor);
+bool busca(no_arvore_t *raiz, int valor);
+no_arvore_t *remover_valor(no_arvore_t *raiz, int valor);
