@@ -70,6 +70,13 @@ no_arvore_t *remover_valor(no_arvore_t *raiz, int valor){
         }
     return raiz;
 }
+// void em_ordem(no_arvore_t *raiz) {
+//     if (raiz == NULL) return;
+//     em_ordem(raiz->esquerda);
+//     printf("%d ", raiz->valor);
+//     em_ordem(raiz->direita);
+// }
+
 
     typedef struct no_avl {
         int valor;
@@ -198,3 +205,9 @@ no_arvore_t *remover_valor(no_arvore_t *raiz, int valor){
         v->altura = 1 + max(altura(v->esquerda), altura(v->direita));
         return balancear(v);
     }
+// void em_ordem_avl(no_avl_t *raiz) {
+//         if (raiz == NULL) return;
+//         em_ordem_avl(raiz->esquerda);
+//         printf("%d ", raiz->valor);
+//         em_ordem_avl(raiz->direita);
+//     }
