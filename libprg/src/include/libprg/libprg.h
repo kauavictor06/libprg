@@ -66,6 +66,8 @@ void remover_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 void bubble_sort(int vetor[], int tamanho);
 void insertion_sort(int vetor[], int tamanho);
 void selection_sort(int vetor[], int tamanho);
+void merge(int vetor[], int inicio, int meio, int fim);
+void merge_sort(int vetor[], int inicio, int fim);
 
 
 typedef struct no_arvore no_arvore_t;

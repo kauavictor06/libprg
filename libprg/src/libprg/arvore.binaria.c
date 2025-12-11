@@ -2,6 +2,7 @@
 // Created by aluno on 18/11/2025.
 //
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "libprg/libprg.h"
 typedef struct no_arvore {
@@ -46,9 +47,27 @@ no_arvore_t *remover_valor(no_arvore_t *raiz, int valor){
     } else if (valor > raiz->valor) {
         raiz->direita = remover_valor(raiz->direita, valor);
     } else {
-        // IF nó folha ou nó com um filho
-        // ELSE nó com dois filhos
-    }
+            if (raiz->esquerda == NULL && raiz->direita == NULL) {
+                free(raiz);
+                return NULL;
+            }
+            if (raiz->esquerda == NULL) {
+                no_arvore_t *temp = raiz->direita;
+                free(raiz);
+                return temp;
+            }
+            if (raiz->direita == NULL) {
+                no_arvore_t *temp = raiz->esquerda;
+                free(raiz);
+                return temp;
+            }
+            no_arvore_t *temp = raiz->esquerda;
+            while (temp->direita != NULL)
+                temp = temp->direita;
+
+            raiz->valor = temp->valor;
+            raiz->esquerda = remover_valor(raiz->esquerda, temp->valor);
+        }
     return raiz;
 }
 
